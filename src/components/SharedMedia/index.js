@@ -1,6 +1,7 @@
 import React from "react";
 import {
   EmailShareButton,
+  FacebookMessengerShareButton,
   FacebookShareButton,
   PinterestShareButton,
   RedditShareButton,
@@ -13,6 +14,7 @@ import {
 import {
   EmailIcon,
   FacebookIcon,
+  FacebookMessengerIcon,
   PinterestIcon,
   RedditIcon,
   TelegramIcon,
@@ -47,7 +49,16 @@ const SharedMedia = ({ link, title }) => {
           <FacebookIcon size={25} round />
         </FacebookShareButton>
       </div>
-
+      <div className="item">
+        <FacebookMessengerShareButton
+          url={"https://giftter.gabrieldiazdev.com/giftter/kG3rxNhhXd0Dkd37DG"}
+          quote={title}
+          title="Share on Facebook"
+          appId="360303158538861"
+        >
+          <FacebookMessengerIcon size={25} round />
+        </FacebookMessengerShareButton>
+      </div>
       <div className="item">
         <PinterestShareButton
           url={"https://giftter.gabrieldiazdev.com/giftter/kG3rxNhhXd0Dkd37DG"}
