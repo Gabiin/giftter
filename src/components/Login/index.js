@@ -21,10 +21,10 @@ const Login = () => {
   const [_, pushLocation] = useLocation();
 
   useEffect(() => {
-    if (isLogged) {
+    if (isLogged & !isLoading) {
       pushLocation("/home");
     }
-  }, [isLogged, pushLocation]);
+  }, [isLogged, pushLocation, isLoading]);
 
   const handleLoginClick = () => {
     try {

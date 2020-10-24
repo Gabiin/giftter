@@ -38,6 +38,7 @@ const Nav = ({ props }) => {
     e.preventDefault();
     logout();
   };
+
   return (
     <nav className="nav">
       <div className="logo">
