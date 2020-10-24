@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 
 // css
 import "./loader.css";
@@ -8,10 +9,15 @@ import SVG_File from "../../loader.svg";
 
 const Loader = ({ showHR = true }) => {
   return (
-    <div className="loader">
-      {showHR ? <hr /> : null}
-      <img src={SVG_File} alt="Loading..." width="60px" height="60px" />
-    </div>
+    <>
+      <Helmet>
+        <title>Loading...</title>
+      </Helmet>
+      <div className="loader">
+        {showHR ? <hr /> : null}
+        <img src={SVG_File} alt="Loading..." width="60px" height="60px" />
+      </div>
+    </>
   );
 };
 
