@@ -28,13 +28,17 @@ const Giftter = ({ params }) => {
       ) : (
         <>
           <Helmet>
+            <title>{`GIFTTER | ${title}`}</title>
             <meta charSet="utf-8" />
-            <title itemProp="name">{`Giftter | ${title}`}</title>
-            <meta name="description" content={title} />
-            <meta property="og:type" content="article" />
-            <link rel="canonical" href={shareLink} />
-            <link rel="alternate" href={shareLink} />
-            <base target="_blank" href={shareLink} />
+            <meta property="og:image" content={url} />
+            <meta property="og:image:type" content="image/gif" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={shareLink} />
+            <meta property="og:image:secure_url" content={shareLink} />
+            <meta property="og:title" content={`GIFTTER | ${title}`} />
+            <meta property="og:description" content={title} />
+            <meta property="fb:app_id" content="360303158538861" />
+            <meta property="og:site_name" content={`GIFTTER | ${title}`} />
           </Helmet>
           <h3>{title}</h3>
           <hr />
