@@ -1,7 +1,6 @@
 import { API_URL_CUSTOM } from "../settings/API";
 
 const fromApiResponseToLoginData = (apiResponse) => {
-  console.log(apiResponse);
   const { token, userId, errors } = apiResponse;
   return { token, userId, errors };
 };

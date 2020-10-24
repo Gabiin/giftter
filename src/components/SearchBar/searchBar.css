@@ -6,6 +6,7 @@
   background-color: #000000;
   padding: 1em;
   width: 100vw;
+  min-width: 600px;
 }
 
 .searchBar div {

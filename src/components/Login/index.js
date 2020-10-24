@@ -16,17 +16,23 @@ import "./login.css";
 const Login = () => {
   const [loginData, setLoginData] = useState({ handler: "", password: "" });
   const { isLoading, isLogged, hasError, login, errors } = useUser();
+
   // eslint-disable-next-line
   const [_, pushLocation] = useLocation();
-  const handleLoginClick = () => {
-    login({ handler: loginData.handler, password: loginData.password });
-  };
 
   useEffect(() => {
     if (isLogged) {
       pushLocation("/home");
     }
   }, [isLogged, pushLocation]);
+
+  const handleLoginClick = () => {
+    try {
+      login({ handler: loginData.handler, password: loginData.password });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return isLoading ? (
     <Loader showHR={false} />

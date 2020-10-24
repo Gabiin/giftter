@@ -33,7 +33,6 @@ const useUser = () => {
           handler,
           password,
         });
-        console.log(errors);
         if (errors) {
           setActionState({ isLoading: false, hasError: true });
           setErrors(errors);
