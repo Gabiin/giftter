@@ -29,7 +29,7 @@ const Giftter = ({ params }) => {
         <>
           <Helmet>
             <meta charSet="utf-8" />
-            <title itemProp="name">Giftter | {title}</title>
+            <title itemProp="name">{`Giftter | ${title}`}</title>
             <meta name="description" content={title} />
             <meta property="og:type" content="article" />
             <link rel="canonical" href={shareLink} />
