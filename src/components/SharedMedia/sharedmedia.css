@@ -1,0 +1,19 @@
+.sharedcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.item {
+  display: flex;
+  padding: 0.1em;
+  align-items: center;
+}
+
+span {
+  color: #ceaefff9;
+  margin-right: 10px;
+}

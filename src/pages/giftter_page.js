@@ -5,6 +5,7 @@ import { useLocation } from "wouter";
 import Gif from "../components/Gif";
 import useGif from "../hooks/useGif";
 import Loader from "../components/Loader";
+import SharedMedia from "../components/SharedMedia";
 
 const Giftter = ({ params }) => {
   const { gif, isLoading, isError } = useGif({ gifId: params.id });
@@ -26,6 +27,7 @@ const Giftter = ({ params }) => {
           <hr />
           <Suspense fallback={<Loader />}>
             <Gif id={id} title={title} url={url}></Gif>
+            <SharedMedia link={url} title={title}></SharedMedia>
           </Suspense>
         </>
       )}
