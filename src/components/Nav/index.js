@@ -34,6 +34,10 @@ const ActiveLink = (props) => {
 
 const Nav = ({ props }) => {
   const { isLogged, logout } = useUser();
+  const handleLogoutClick = (e) => {
+    e.preventDefault();
+    logout();
+  };
   return (
     <nav className="nav">
       <div className="logo">
@@ -56,9 +60,9 @@ const Nav = ({ props }) => {
               <ActiveLink href="/profile">Profile</ActiveLink>
             </li>
             <li>
-              <a href="/#" onClick={() => logout()}>
-                Logout
-              </a>
+              <Link to="/#" onClick={handleLogoutClick}>
+                <a href="/#">Logout</a>
+              </Link>
             </li>
           </>
         ) : (
