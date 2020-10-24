@@ -1,6 +1,6 @@
 # GIFTTER
 
-Grifter it's a simple React App using Giphy API. In this app I trying to implement a bunch of React concepts like Custom Hooks, CSS Grid, Session Storage, Local Storage, reusable components, diferences between page and components and more.. It's only for educational and learning prupouse. I'm still working on responsive CSS, editing profile, Avatar component, etc.
+Grifter it's a simple React App using Giphy API. In this app I trying to implement a bunch of React concepts like Custom Hooks, Inifite Scrolling, CSS Grid, Session Storage, Local Storage, reusable components, diferences between page and components and more.. It's only for educational and learning prupouse. I'm still working on responsive CSS, editing profile, Avatar component, etc.
 
 ## Installation
 
