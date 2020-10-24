@@ -24,22 +24,36 @@ const Giftter = ({ params }) => {
   return (
     <div className="container">
       {isLoading ? (
-        <Loader />
-      ) : (
         <>
           <Helmet>
-            <title>{`GIFTTER | ${title}`}</title>
-            <meta charSet="utf-8" />
-            <meta property="og:image" content={url} />
-            <meta property="og:image:type" content="image/gif" />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content={shareLink} />
-            <meta property="og:image:secure_url" content={shareLink} />
-            <meta property="og:title" content={`GIFTTER | ${title}`} />
-            <meta property="og:description" content={title} />
-            <meta property="fb:app_id" content="360303158538861" />
-            <meta property="og:site_name" content={`GIFTTER | ${title}`} />
+            <title>Loading...</title>
           </Helmet>
+          <Loader />
+        </>
+      ) : (
+        <>
+          <Helmet
+            title={`GIFTTER | ${title}`}
+            meta={[
+              { name: "author", content: `GIFTTER | ${title}` },
+              { name: "twitter:site", content: `GIFTTER | ${title}` },
+              { name: "twitter:creator", content: `GIFTTER | ${title}` },
+              { name: "twitter:title", content: title },
+              { name: "twitter:image", content: url },
+              { property: "og:title", content: title },
+              { property: "og:site_name", content: `GIFTTER | ${title}` },
+              { property: "og:type", content: "website" },
+              { property: "og:url", content: shareLink },
+              { property: "og:description", content: title },
+              { property: "og:image", content: url },
+              { property: "og:site_name", content: `GIFTTER | ${title}` },
+              {
+                name: "viewport",
+                content: "width=device-width, maximum-scale=1",
+              },
+              { name: "fb:app_id", content: "360303158538861" },
+            ]}
+          />
           <h3>{title}</h3>
           <hr />
           <Suspense fallback={<Loader />}>

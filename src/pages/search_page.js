@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import Helmet from "react-helmet";
 
 //components
 import ListOfGifs from "../components/ListOfGifs";
@@ -22,9 +23,17 @@ const Search = ({ params }) => {
   return (
     <div className="container" id="searchDiv">
       {isLoading ? (
-        <Loader />
+        <>
+          <Helmet>
+            <title>Loading...</title>
+          </Helmet>
+          <Loader />
+        </>
       ) : (
         <>
+          <Helmet>
+            <title>{`GIFTTER | Search for: ${keyword}`}</title>
+          </Helmet>
           <h3>Search: {keyword}</h3>
           <hr />
           <Suspense fallback={<Loader />}>

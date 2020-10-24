@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import Helmet from "react-helmet";
 
 //components
 import ListOfGifs from "../components/ListOfGifs";
@@ -15,9 +16,17 @@ const Trending = () => {
   return (
     <div className="container" id="trendingDiv">
       {isLoading ? (
-        <Loader />
+        <>
+          <Helmet>
+            <title>Loading...</title>
+          </Helmet>
+          <Loader />
+        </>
       ) : (
         <>
+          <Helmet>
+            <title>GIFTTER | Trending gifs</title>
+          </Helmet>
           <h3>Trending Gifs</h3>
           <hr />
           <Suspense fallback={<Loader />}>

@@ -1,4 +1,5 @@
 import React, { Suspense, useState, useEffect } from "react";
+import Helmet from "react-helmet";
 
 //components
 import ListOfGifs from "../components/ListOfGifs";
@@ -24,6 +25,9 @@ const MyGiftter = () => {
 
   return (
     <div className="container" id="myGiffterDiv">
+      <Helmet>
+        <title>GIFTTER | My Giffters</title>
+      </Helmet>
       <h3>Liked Gifs</h3>
       <hr />
       <Suspense fallback={<Loader />}>
