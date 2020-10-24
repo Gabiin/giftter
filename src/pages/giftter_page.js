@@ -27,7 +27,7 @@ const Giftter = ({ params }) => {
           <hr />
           <Suspense fallback={<Loader />}>
             <Gif id={id} title={title} url={url}></Gif>
-            <SharedMedia link={url} title={title}></SharedMedia>
+            <SharedMedia url={url} title={title}></SharedMedia>
           </Suspense>
         </>
       )}
