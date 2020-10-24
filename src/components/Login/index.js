@@ -17,8 +17,7 @@ const Login = () => {
   const [loginData, setLoginData] = useState({ handler: "", password: "" });
   const { isLoading, isLogged, hasError, login, errors } = useUser();
   // eslint-disable-next-line
-  const [location, pushLocation] = useLocation();
-  console.log(location);
+  const [_, pushLocation] = useLocation();
   const handleLoginClick = () => {
     login({ handler: loginData.handler, password: loginData.password });
   };
@@ -29,7 +28,9 @@ const Login = () => {
     }
   }, [isLogged, pushLocation]);
 
-  return (
+  return isLoading ? (
+    <Loader showHR={false} />
+  ) : (
     <div className="loginForm">
       {hasError ? (
         <div className="group">

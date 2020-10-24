@@ -1,0 +1,12 @@
+.smallLoader {
+  background: rgba(54, 9, 121, 0.8);
+  border: 0;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+}
+
+.smallLoader img {
+  width: 20px;
+  fill: #ceaefff9;
+}

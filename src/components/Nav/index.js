@@ -37,7 +37,11 @@ const Nav = ({ props }) => {
   return (
     <nav className="nav">
       <div className="logo">
-        <h4>Giftter</h4>
+        <Link to="/home">
+          <a href="/#">
+            <h4>Giftter</h4>
+          </a>
+        </Link>
       </div>
       <ul className="nav-links">
         <li>

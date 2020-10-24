@@ -4,6 +4,9 @@ import { useLocation } from "wouter";
 //custom hook
 import useUser from "../../hooks/useUser";
 
+//components
+import SmallLoader from "../SmallLoader";
+
 //Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp as likeIcon } from "@fortawesome/free-solid-svg-icons/faThumbsUp";
@@ -13,7 +16,7 @@ import { faTimesCircle as unLikedIcon } from "@fortawesome/free-solid-svg-icons/
 import "./fav.css";
 
 const Fav = ({ gifId, title, url }) => {
-  const { isLogged, likeFav, unLikeFav, favs } = useUser();
+  const { isLogged, likeFav, unLikeFav, favs, isLoading } = useUser();
 
   // eslint-disable-next-line
   const [_, pushLocation] = useLocation();
@@ -54,7 +57,9 @@ const Fav = ({ gifId, title, url }) => {
     ? [handleLikeClick, "Add this Gif to My Giftter!", likeIcon]
     : [handleUnLikeClick, "Remove this Gif!", unLikedIcon];
 
-  return (
+  return isLoading ? (
+    <SmallLoader />
+  ) : (
     <button className="giftter-Fav" onClick={clickOption} title={label}>
       <FontAwesomeIcon icon={icon} className="icon" />
     </button>

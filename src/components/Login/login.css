@@ -81,6 +81,36 @@
   }
 }
 
+@media screen and (max-width: 992px) {
+  .loginForm label {
+    width: 100%;
+  }
+  .loginForm input {
+    width: 100%;
+  }
+  .loginForm .group {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .loginForm label {
+    width: 100%;
+    font-size: 8pt;
+  }
+  .loginForm input {
+    width: 100%;
+  }
+  .loginForm .group {
+    width: 100%;
+  }
+
+  .loginForm ul {
+    width: 100%;
+    font-size: 10pt;
+  }
+}
+
 .loginForm ul {
   background-color: #360979a8;
   border-radius: 5px;

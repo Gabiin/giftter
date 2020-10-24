@@ -118,13 +118,19 @@ const useUser = () => {
 
   const likeFav = useCallback(
     async ({ gifId, title, url }) => {
+      setActionState({ isLoading: true });
       try {
         const likedFav = await addLike({ token, gifId, userId, title, url });
         if (likedFav) {
           getUserFavs({ token, userId }).then(setFavs);
+          setActionState({ isLoading: false });
           return true;
-        } else return false;
+        } else {
+          setActionState({ isLoading: false });
+          return false;
+        }
       } catch (err) {
+        setActionState({ isLoading: false });
         return false;
       }
     },
@@ -132,14 +138,20 @@ const useUser = () => {
   );
   const unLikeFav = useCallback(
     async ({ favId }) => {
+      setActionState({ isLoading: true });
       try {
         const result = await unLike({ token, favId });
         if (result) {
           let filt = favs.filter((f) => f._id !== favId);
           setFavs(filt);
+          setActionState({ isLoading: false });
           return true;
-        } else return false;
+        } else {
+          setActionState({ isLoading: false });
+          return false;
+        }
       } catch (err) {
+        setActionState({ isLoading: false });
         return false;
       }
     },
@@ -147,7 +159,7 @@ const useUser = () => {
   );
 
   return {
-    isLoding: actionState.isLoading,
+    isLoading: actionState.isLoading,
     isLogged: Boolean(token),
     isRegistered: actionState.isRegistered,
     hasError: actionState.hasError,

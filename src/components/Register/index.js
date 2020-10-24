@@ -45,7 +45,7 @@ const Register = () => {
   }, [isRegistered, pushLocation]);
 
   return isLoading ? (
-    <Loader />
+    <Loader showHR={false} />
   ) : (
     <div className="registerForm">
       {hasError ? (

@@ -14,6 +14,14 @@
   font-size: 20px;
 }
 
+.logo a {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
 .nav-links {
   display: flex;
   justify-content: space-around;
