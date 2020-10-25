@@ -29,3 +29,9 @@
     --gridList-rows: 210px;
   }
 }
+
+h4 {
+  margin: 1em auto;
+  color: #ceaefff9;
+  text-align: center;
+}

@@ -1,0 +1,30 @@
+/* .avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar img {
+  border-radius: 100%;
+  border: 1px solid #250653c7;
+  width: 256px;
+  height: 256px;
+} */
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.avatar img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -20,12 +20,8 @@ const ListOfGifs = ({ gifs, fetchMoreData, hasMore, scrollableDiv }) => {
       refreshFunction={fetchMoreData}
       pullDownToRefresh
       pullDownToRefreshThreshold={50}
-      pullDownToRefreshContent={
-        <h4 style={{ textAlign: "center" }}>&#8595; Pull down to refresh</h4>
-      }
-      releaseToRefreshContent={
-        <h4 style={{ textAlign: "center" }}>&#8593; Release to refresh</h4>
-      }
+      pullDownToRefreshContent={<h4>Pull down to refresh</h4>}
+      releaseToRefreshContent={<h4>Release to refresh</h4>}
     >
       <div className="ListOfGifs">
         {gifs

@@ -1,45 +1,92 @@
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 1em 10em;
+  flex-direction: row;
+}
+
+.avatar-mini {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.avatar-mini img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.username {
+  letter-spacing: 2px;
+  text-align: center;
+  margin-left: 1em;
+  font-size: 9pt;
+}
+
+.search {
+  width: 50%;
+  /* position: relative; */
+  display: flex;
+  margin: 0 0 1em auto;
+}
+
+.searchTerm {
+  width: 100%;
+  padding: 5px 5px 5px 10px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #000000;
+  background-color: #bdbdbd;
+  border: 1px solid #bdbdbd;
+  border-right: none;
+}
+
+.searchButton {
+  width: 40px;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  /* font-size: 20px; */
+  background-color: rgba(54, 9, 121, 0.9752275910364145);
+  border: 1px solid rgba(54, 9, 121, 0.9752275910364145);
+  color: rgba(212, 187, 250, 0.975);
+}
+
+/*Resize the wrap to see the search bar change!*/
 .searchBar {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   min-height: 5vh;
   background-color: #000000;
   padding: 1em;
   width: 100vw;
-  min-width: 600px;
 }
 
-.searchBar div {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-}
-
-.searchBar input[type="text"] {
-  width: 80%;
-  padding: 0 2.5em 0 0.8em;
-  color: #000000;
-  background-color: #bdbdbd;
-  border: #bdbdbd;
-  border-radius: 5px;
-}
-
-.searchBar input[type="text"]:focus {
-  outline: none;
-}
-
-.searchBar button {
-  width: 30%;
-  padding: 5px;
-  margin-left: 5px;
-  background-color: rgba(54, 9, 121, 0.9752275910364145);
-  border: rgba(54, 9, 121, 0.9752275910364145);
-  border-radius: 3px;
-  color: rgba(212, 187, 250, 0.975);
-  text-transform: uppercase;
+.search input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  border-radius: 50em;
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
+    no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
   cursor: pointer;
 }
 
-.searchBar button:hover {
-  background-color: rgba(62, 22, 122, 0.975);
+.search input[type="search"]:focus::-webkit-search-cancel-button {
+  opacity: 0.3;
+  pointer-events: all;
+}
+
+.search input[type="search"].dark::-webkit-search-cancel-button {
+  filter: invert(1);
 }

@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-  min-width: 600px;
-}
-
 body {
   font-family: "Josefin Sans", sans-serif;
   overflow-x: hidden;
