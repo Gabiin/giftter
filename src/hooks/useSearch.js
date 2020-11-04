@@ -9,6 +9,7 @@ const useSearch = ({ keyword }) => {
   const [hasMore, setHasMore] = useState(false);
   const [page, setPage] = useState(INIT_PAGE);
 
+  // get lastKeyword for las search or current search
   const keywordToUse =
     keyword || localStorage.getItem("lastKeyword") || "random";
 
@@ -21,7 +22,6 @@ const useSearch = ({ keyword }) => {
         });
         setSearchResult(search);
 
-        // save keyword in local storage
         localStorage.setItem("lastKeyword", keyword);
 
         if (search.length === totalCount) setHasMore(false);

@@ -1,5 +1,5 @@
 .giftter-Fav {
-  background: rgba(54, 9, 121, 0.5);
+  background: rgba(54, 9, 121, 0.7);
   border: 0;
   border-radius: 100px;
   cursor: pointer;
@@ -9,10 +9,10 @@
 }
 
 .giftter-Fav:hover {
-  background: rgba(54, 9, 121, 0.8);
+  background: rgb(44, 8, 99);
 }
 
 .giftter-Fav .icon {
   width: 30px;
-  color: #ceaefff9;
+  color: rgb(224, 224, 224);
 }

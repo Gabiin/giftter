@@ -1,88 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useRoute } from "wouter";
+
+//Icon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars as BurgerIcon } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faTimes as CloseIcon } from "@fortawesome/free-solid-svg-icons/faTimes";
+
+//custom hook
 import useUser from "../../hooks/useUser";
+
+//css
 import "./nav.css";
 
-const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links li");
-
-  nav.classList.toggle("nav-active");
-
-  navLinks.forEach((link, index) => {
-    if (link.style.animation) {
-      link.style.animation = "";
-    } else {
-      link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7}s`;
-    }
-  });
-
-  burger.classList.toggle("toggle");
-};
-
-const ActiveLink = (props) => {
-  const [isActive] = useRoute(props.href);
-  return (
-    <Link {...props}>
-      <a href="/#" className={isActive ? "active" : ""}>
-        {props.children}
-      </a>
-    </Link>
-  );
-};
-
 const Nav = ({ props }) => {
+  const [showMenu, setShowMenu] = useState(false);
   const { isLogged, logout } = useUser();
   const handleLogoutClick = (e) => {
     e.preventDefault();
     logout();
   };
 
+  const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    nav.classList.toggle("nav-active");
+    burger.classList.toggle("toggle");
+    setShowMenu(!showMenu);
+  };
+
+  const ActiveLink = (props) => {
+    const [isActive] = useRoute(props.href);
+    return (
+      <Link {...props}>
+        <a href="/#" className={isActive ? "active" : ""}>
+          {props.children}
+        </a>
+      </Link>
+    );
+  };
+
   return (
-    <nav className="nav">
-      <div className="logo">
-        <Link to="/home">
-          <a href="/#">
-            <h4>Giftter</h4>
-          </a>
-        </Link>
-      </div>
-      <ul className="nav-links">
-        <li>
-          <ActiveLink href="/home">Home</ActiveLink>
-        </li>
-        {isLogged ? (
-          <>
-            <li>
-              <ActiveLink href="/mygiftter">My Giftter</ActiveLink>
-            </li>
-            <li>
-              <ActiveLink href="/profile">Profile</ActiveLink>
-            </li>
-            <li>
-              <Link to="/#" onClick={handleLogoutClick}>
-                <a href="/#">Logout</a>
-              </Link>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <ActiveLink href="/register">Register</ActiveLink>
-            </li>
-            <li>
-              <ActiveLink href="/login">Login</ActiveLink>
-            </li>
-          </>
-        )}
-      </ul>
-      <div className="burger" onClick={navSlide}>
-        <div className="line1"></div>
-        <div className="line2"></div>
-        <div className="line3"></div>
-      </div>
-    </nav>
+    <>
+      <nav className="nav">
+        <div className="logo">
+          <Link to="/home">
+            <h1>
+              <a href="/#">Giftter</a>
+            </h1>
+          </Link>
+        </div>
+        <div className="burger" onClick={navSlide}>
+          <FontAwesomeIcon icon={!showMenu ? BurgerIcon : CloseIcon} />
+        </div>
+        <ul className="nav-links">
+          <li>
+            <ActiveLink href="/home">Home</ActiveLink>
+          </li>
+          {isLogged ? (
+            <>
+              <li>
+                <ActiveLink href="/mygiftter">My Giftter</ActiveLink>
+              </li>
+              <li>
+                <ActiveLink href="/profile">Profile</ActiveLink>
+              </li>
+              <li>
+                <Link to="/#" onClick={handleLogoutClick}>
+                  <a href="/#">Logout</a>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <ActiveLink href="/register">Register</ActiveLink>
+              </li>
+              <li>
+                <ActiveLink href="/login">Login</ActiveLink>
+              </li>
+            </>
+          )}
+        </ul>
+      </nav>
+    </>
   );
 };
 

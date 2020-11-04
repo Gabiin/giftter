@@ -9,14 +9,6 @@ const Context = React.createContext({});
 
 //provider
 export const UserContextProvider = ({ children }) => {
-  /*   const tokenItem = localStorage.getItem("token")
-    ? localStorage.getItem("token")
-    : null;
-
-  const userIdItem = localStorage.getItem("userId")
-    ? localStorage.getItem("userId")
-    : null; */
-
   const [user, setUser] = useState({});
   const [favs, setFavs] = useState([]);
 

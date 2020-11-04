@@ -1,37 +1,7 @@
-.user-profile {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  flex-direction: row;
-}
-
-.avatar-mini {
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  border-radius: 50%;
-  position: relative;
-}
-
-.avatar-mini img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.username {
-  letter-spacing: 2px;
-  text-align: center;
-  margin-left: 1em;
-  font-size: 9pt;
-}
-
 .search {
-  width: 50%;
-  /* position: relative; */
   display: flex;
   margin: auto;
+  width: 90%;
 }
 
 .searchTerm {
@@ -43,6 +13,7 @@
   background-color: #bdbdbd;
   border: 1px solid #bdbdbd;
   border-right: none;
+  font-size: 0.7em;
 }
 
 .searchButton {
@@ -59,14 +30,14 @@
 /*Resize the wrap to see the search bar change!*/
 .searchBar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   align-items: center;
   min-height: 5vh;
   background-color: #000000;
-  padding: 1em;
-  width: 100vw;
+  padding: 0 1em;
+  padding-bottom: 1em;
+  width: 100%;
 }
 
 .search input[type="search"]::-webkit-search-cancel-button {
@@ -89,4 +60,38 @@
 
 .search input[type="search"].dark::-webkit-search-cancel-button {
   filter: invert(1);
+}
+
+.user-profile {
+  display: none;
+}
+
+@media screen and (min-width: 786px) {
+  .user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .avatar-mini {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .avatar-mini img {
+    display: block;
+    width: 100%;
+  }
+
+  .username {
+    margin-top: 1em;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-left: 1em;
+    font-size: 0.6em;
+  }
 }

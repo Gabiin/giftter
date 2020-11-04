@@ -9,14 +9,15 @@
 body {
   font-family: "Josefin Sans", sans-serif;
   overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
+  min-width: 375px;
+  min-height: 100vh;
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 1) 0%,
     rgba(54, 9, 121, 0.9752275910364145) 50%,
     rgba(0, 0, 0, 1) 100%
   );
+  font-size: 18px;
 }
 
 .container {
@@ -25,7 +26,7 @@ body {
   border: 2px solid #250653c7;
   width: 80%;
   margin: 1em auto;
-  padding: 2em;
+  padding: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
