@@ -60,6 +60,7 @@ const SearchBar = () => {
         <div className="user-profile">
           <div className="avatar-mini">
             <img
+              loading="lazy"
               src={avatarUrl}
               alt={`User: ${userProfile.name}, ${userProfile.lastname}`}
             ></img>

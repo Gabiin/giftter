@@ -67,11 +67,27 @@
 }
 
 @media screen and (min-width: 786px) {
+  .searchBar {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 3em;
+    padding-bottom: 1em;
+    width: 100%;
+  }
+
+  .search {
+    margin: auto;
+    width: 50%;
+  }
+
   .user-profile {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    margin: auto;
   }
 
   .avatar-mini {
@@ -80,6 +96,9 @@
     overflow: hidden;
     border-radius: 50%;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .avatar-mini img {
@@ -88,10 +107,13 @@
   }
 
   .username {
-    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
     letter-spacing: 2px;
     text-align: center;
     margin-left: 1em;
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
 }

@@ -127,4 +127,36 @@
   .burger {
     display: none;
   }
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    padding: 1em 3em;
+    min-height: 8vh;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 1;
+    animation: none;
+  }
+
+  .nav-active {
+    background: rgba(0, 0, 0, 0.97);
+    z-index: 1;
+    border-top: none;
+    top: 0;
+  }
+  .logo {
+    width: 20%;
+    justify-content: flex-start;
+  }
+  .nav-links li {
+    list-style: none;
+    width: 80%;
+    border-bottom: none;
+    margin: 0 1em;
+  }
 }
