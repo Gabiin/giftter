@@ -44,7 +44,7 @@ const Login = () => {
           <ul>
             {Object.keys(errors).map((item, index) => (
               <li key={index}>
-                <strong>{getNormalize(item)}: </strong>
+                <strong>{getNormalize(item)}:</strong>
                 {errors[item]}
               </li>
             ))}

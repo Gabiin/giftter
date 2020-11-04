@@ -56,21 +56,23 @@
   background-color: #360979a8;
   border-radius: 5px;
   border: 1px solid #ceaefff9;
-  width: 80%;
-  padding: 0.5em 2.5em 0.5em 2em;
-  font-size: 12pt;
+  padding: 0.5em 2em;
+  font-size: 0.8em;
   font-weight: normal;
 }
 
 .registerForm ul > li {
   color: #ceaefff9;
-  margin: 8px;
+  padding: 0.5em;
 }
 
-.registerForm ul > li > strong {
+.registerForm strong {
   font-weight: bold;
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-decoration: underline;
+  margin-right: 0.5em;
+  font-size: 0.9em;
+  letter-spacing: 1px;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -103,7 +105,13 @@
   }
   .registerForm ul {
     width: 100%;
-    font-size: 10pt;
+    font-size: 0.7em;
+  }
+  .registerForm ul {
+    line-height: 1.5em;
+  }
+  .registerForm ul > li {
+    padding: 0.3em;
   }
 }
 

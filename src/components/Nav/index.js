@@ -31,12 +31,20 @@ const Nav = ({ props }) => {
   const ActiveLink = (props) => {
     const [isActive] = useRoute(props.href);
     return (
-      <Link {...props}>
+      <Link {...props} onClick={linkClick}>
         <a href="/#" className={isActive ? "active" : ""}>
           {props.children}
         </a>
       </Link>
     );
+  };
+
+  const linkClick = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    nav.classList.remove("nav-active");
+    burger.classList.remove("toggle");
+    setShowMenu(false);
   };
 
   return (
